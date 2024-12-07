@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "death-effects",
+  "version": "${version}",
+  "name": "Death Effects",
+  "description": "Spawn effects upon death!",
+  "authors": [
+    "I-No-oNe"
+  ],
+  "contact": {
+    "homepage": "https://i-no-one.github.io",
+    "sources": "https://github.com/I-No-oNe/Death-Effects"
+  },
+  "license": "MIT",
+  "icon": "assets/death-effects/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.i_no_am.death.DeathEffects"
+    ],
+    "modmenu": [
+      "net.i_no_am.death.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "death-effects.mixins.json"
+  ],
+  "depends": {
+    "modmenu": ">=${modmenu_version}",
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">=${minecraft_version}",
+    "java": ">=21"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

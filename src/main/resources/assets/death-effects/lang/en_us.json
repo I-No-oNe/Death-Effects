@@ -1,0 +1,14 @@
+{
+  "text.autoconfig.death-effects.title": "Death Effects Settings",
+  "text.autoconfig.death-effects.option.modSettings": "Additional Options",
+  "text.autoconfig.death-effects.option.modSettings.enableViaMessage": "Trigger upon a word in chat",
+  "text.autoconfig.death-effects.option.modSettings.entitySelection": "Entity upon death the effects will spawn",
+  "text.autoconfig.death-effects.option.modSettings.trigger": "Trigger Word (WORK ONLY ON PLAYERS)",
+  "text.autoconfig.death-effects.option.lightning": "Lightning Settings",
+  "text.autoconfig.death-effects.option.lightning.spawnLighting": "Lightning Bolt on Death",
+  "text.autoconfig.death-effects.option.rocket": "Rockets Settings",
+  "text.autoconfig.death-effects.option.rocket.spawnRocketParticles": "Spawn rockets on death",
+  "text.autoconfig.death-effects.option.rocket.rocketShape": "Rocket Shape",
+  "text.autoconfig.death-effects.option.rocket.rocketVelocity": "Rocket Velocity",
+  "text.autoconfig.death-effects.option.rocket.rocketColor": "Rocket Color Particles"
+}

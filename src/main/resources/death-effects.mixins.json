@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.i_no_am.death.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MixinClientConnection"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "MixinChatHud"
+  ]
+}
