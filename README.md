@@ -9,7 +9,7 @@ How to use?
 ```
 --------------------
 ## Showcase:
-### Config
+### Config Screen:
 ![Config GUI](assets/config.png)
 --------------------
 ### In-game Example:
