@@ -3,7 +3,6 @@ package net.i_no_am.death.utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.i_no_am.death.Global;
-import net.i_no_am.death.config.DeathEffectsConfig;
 import net.minecraft.component.type.FireworkExplosionComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -17,18 +16,18 @@ public class Utils implements Global {
 
     public static String getPlayerName(Text message) {
         String[] words = message.getString().split(" ");
-        for (PlayerEntity player : mc.world.getPlayers()) {
-            if (words[0].equalsIgnoreCase(player.getName().getString())) {
-                return player.getName().getString();
+        for (String word : words) {
+            for (PlayerEntity player : mc.world.getPlayers()) {
+                if (word.equalsIgnoreCase(player.getName().getString()))
+                    return player.getName().getString();
             }
         }
         return null;
     }
 
-
     public static void spawnFirework(String playerName) {
         for (PlayerEntity player : mc.world.getPlayers()) {
-            if (playerName != null  && player.getName().getString().contains(playerName))
+            if (playerName != null && player.getName().getString().contains(playerName))
                 spawnFirework(player);
         }
     }
@@ -90,16 +89,12 @@ public class Utils implements Global {
     }
 
     public static FireworkExplosionComponent.Type getRocketShape() {
-        if (config.rocket.rocketShape == DeathEffectsConfig.RocketShapes.BURST)
-            return FireworkExplosionComponent.Type.BURST;
-        if (config.rocket.rocketShape == DeathEffectsConfig.RocketShapes.CREEPER)
-            return FireworkExplosionComponent.Type.CREEPER;
-        if (config.rocket.rocketShape == DeathEffectsConfig.RocketShapes.STAR)
-            return FireworkExplosionComponent.Type.STAR;
-        if (config.rocket.rocketShape == DeathEffectsConfig.RocketShapes.SMALL_BALL)
-            return FireworkExplosionComponent.Type.SMALL_BALL;
-        if (config.rocket.rocketShape == DeathEffectsConfig.RocketShapes.LARGE_BALL)
-            return FireworkExplosionComponent.Type.LARGE_BALL;
-        return FireworkExplosionComponent.Type.BURST;
+        return switch (config.rocket.rocketShape) {
+            case BURST -> FireworkExplosionComponent.Type.BURST;
+            case CREEPER -> FireworkExplosionComponent.Type.CREEPER;
+            case STAR -> FireworkExplosionComponent.Type.STAR;
+            case SMALL_BALL -> FireworkExplosionComponent.Type.SMALL_BALL;
+            case LARGE_BALL -> FireworkExplosionComponent.Type.LARGE_BALL;
+        };
     }
 }
