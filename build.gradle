@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'fabric-loom' version "${loom_version}"
     id 'maven-publish'
 }
 
@@ -15,7 +15,7 @@ repositories {
         url "https://maven.shedaniel.me/"
     }
     maven {
-        url "https://maven.terraformersmc.com/releases/"
+        url "https://maven.terraformersmc.com/"
     }
 }
 

@@ -15,8 +15,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientConnection.class)
 public class MixinClientConnection implements Global {
     @Inject(method = "handlePacket", at = @At("HEAD"))
-    private static void onHandlePacket(Packet<?> packet, PacketListener listener, CallbackInfo ci) {
-        if (mc == null || mc.player == null || mc.world == null || config == null || config.modSettings.enableViaMessage && !config.modSettings.trigger.isEmpty()) return;
+    private static <T extends PacketListener> void onHandlePacket(Packet<T> packet, PacketListener listener, CallbackInfo ci) {
+
+        if (mc.player == null || mc.world == null || config == null
+                || config.modSettings.enableViaMessage && !config.modSettings.trigger.isEmpty())
+            return;
 
         if (packet instanceof EntityStatusS2CPacket p && p.getStatus() == 3) {
             Entity entity = p.getEntity(mc.world);
