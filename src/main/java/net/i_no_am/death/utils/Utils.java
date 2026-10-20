@@ -58,7 +58,8 @@ public class Utils implements Global {
                 0,
                 config.rocket.rocketVelocity,
                 0,
-                Collections.singletonList(fireworkExplosion)
+                Collections.singletonList(fireworkExplosion),
+                true
         );
     }
 
