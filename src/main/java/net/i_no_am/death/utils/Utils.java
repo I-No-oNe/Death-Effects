@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.i_no_am.death.Global;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.component.FireworkExplosion;
@@ -63,7 +63,7 @@ public class Utils implements Global {
     }
 
     public static void spawnLightning(Entity entity) {
-        LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, mc.level);
+        LightningBolt lightning = new LightningBolt(EntityTypes.LIGHTNING_BOLT, mc.level);
         lightning.setPos(entity.getX(), entity.getY(), entity.getZ());
         mc.level.addEntity(lightning);
     }
