@@ -26,11 +26,10 @@
     "death-effects.mixins.json"
   ],
   "depends": {
-    "modmenu": ">=${modmenu_version}",
-    "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": ">=${minecraft_version}",
-    "java": ">=21"
+    "modmenu": "\u003e\u003d${modmenu_version}",
+    "fabricloader": "\u003e\u003d0.19.2",
+    "minecraft": "~26.1",
+    "java": "\u003e\u003d21"
   },
   "suggests": {
     "another-mod": "*"
